@@ -2,16 +2,21 @@
 /* Juan Blanco Martín                 */
 /* Práctica Final - Tecnologías Web   */
 
+
 .col-img-inicio {
     background-image: url(imgInicio.png);
     background-size: cover;
     height: 100vh;
+    
+    
 }
 
 .col-login {
     background-color: rgb(21, 32, 43);
     font-family: "Arial";
+    color: aliceblue;
     height: 100vh;   
+ 
 }
 
 @media(max-width: 991px){
