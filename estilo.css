@@ -3,8 +3,17 @@
 /* Práctica Final - Tecnologías Web   */
 
 
+.remove-all-margin-padding{
+    margin:0 ! important;
+    padding:0 ! important;
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
+
 .col-img-inicio {
-    background-image: url(imgInicio.png);
+    background-image: url(imgInicio1.png);
     background-size: cover;
     height: 100vh;
     
@@ -19,6 +28,27 @@
  
 }
 
+.formulario {
+   padding-top: 20%;
+   padding-left: 25%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+  
+.row.no-gutter [class*='col-']:not(:first-child), .row.no-gutter [class*='col-']:not(:last-child) {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+/* Conversión de tamaño para asegurar un diseño responsive */
 @media(max-width: 991px){
     .col-img-inicio {
         height: 30vh;
