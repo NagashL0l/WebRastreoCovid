@@ -58,15 +58,14 @@ input[type=submit] {
 
 h3 {
     color: rgb(59, 148, 86);
-    text-align: justify;
-    font-size: 31px;
+    font-size: 33px;
     
 }
 
 
 .info {
     padding-top: 50px;
-    text-align: justify;
+    
 }
 
 .container-fluid {
