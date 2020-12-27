@@ -1,0 +1,93 @@
+
+body {
+    overflow: hidden; /* oculta las scrollbars */
+    font-family: "Arial";
+}
+
+/* Navigation top bar */
+.topnav {
+    overflow: hidden;
+    background-color: rgb(21, 32, 43);
+  }
+  
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 30px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav a.active {
+background-color: rgb(59, 148, 86);
+color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/*Nuevo caso*/
+.nuevoCaso {
+    padding-top: 25%;
+    width: 100%;
+    
+ }
+ 
+input[type=text] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     box-sizing: border-box;
+     border: none;
+     border-bottom: 2px solid rgb(59, 148, 86);
+}
+
+input[type=submit] {
+    background-color:  rgb(59, 148, 86);
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.nuevoCaso{
+    background-color: rgb(21, 32, 43);
+    color: aliceblue;
+    height: 100vh; 
+}
+
+.contTotalCasos{
+    background-color: rgb(59, 148, 86);
+    color: rgb(21, 32, 43);
+    height: 100vh;
+    width: 100vh;
+    
+ 
+    
+}
+
+.texto{
+    margin-top: 22.5vh;
+    font-size: 80px;
+    text-align:center;
+}
+
+.casos{
+    font-size: 120px;
+    text-align:center;
+}
+
