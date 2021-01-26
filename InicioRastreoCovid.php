@@ -8,7 +8,7 @@ session_start();
 <head>
     <title>Página de inicio</title>
     <!--Uso del framework Bootstrap para asegurar un diseño responsive-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/estiloInicio.css">
     <meta charset="utf-8">
@@ -36,10 +36,11 @@ session_start();
                             </div>
                             <div class="col-lg-6">
                                 <div class="formulario">
-                                    <form>>
+                                    <form>
                                         <input type="text" name="dniUser" placeholder="DNI"><br>
                                         <input type="password" name="pass" placeholder="Contraseña"><br>
                                         <input type="button" value="Enviar" onclick="comprobarLogin()"><br>
+                                    </form>
                                 </div>
                                 <div class="info">
                                     <h3>Portal de seguimiento de casos</h3>
@@ -76,7 +77,7 @@ session_start();
                                     
 
                                     <div>
-                                        <img src="../src/logoMinisterio3.png" alt="logo">
+                                        <img src="src/logoMinisterio3.png" alt="logo">
                                     </div>
                                    
                                    

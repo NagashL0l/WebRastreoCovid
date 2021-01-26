@@ -43,7 +43,7 @@ input[type=text], input[type=password] {
     border-bottom: 2px solid rgb(59, 148, 86);
 }
 
-input[type=submit] {
+input[type=button] {
     background-color:  rgb(59, 148, 86);
     border: none;
     color: white;
@@ -52,7 +52,6 @@ input[type=submit] {
     margin: 8px 0;
     text-decoration: none;
     cursor: pointer;
-
 }
 
 
