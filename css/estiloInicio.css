@@ -14,7 +14,7 @@ body {
 }
 
 .col-img-inicio {
-    background-image: url(imgInicio1.png);
+    background-image: url("../src/imgInicio1.png");
     background-size: cover;
     height: 100vh;
     

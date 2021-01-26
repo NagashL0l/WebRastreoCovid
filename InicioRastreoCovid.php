@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 <html lang = "es">
@@ -6,10 +10,11 @@
     <!--Uso del framework Bootstrap para asegurar un diseño responsive-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="estiloInicio.css">
+    <link rel="stylesheet" href="css/estiloInicio.css">
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="javascript/comprobaciones.js"></script>
 </head>
 
 <body>
@@ -31,10 +36,10 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="formulario">
-                                    <form action="../adminNuevoCaso/paginaAdministrador.html" method="post">
-                                        <input type="text" name="usuario" placeholder="Usuario"><br>
-                                        <input type="password" name="contraseña" placeholder="Contraseña"><br>
-                                        <input type="submit" value="Entrar"> 
+                                    <form>>
+                                        <input type="text" name="dniUser" placeholder="DNI"><br>
+                                        <input type="password" name="pass" placeholder="Contraseña"><br>
+                                        <input type="button" value="Enviar" onclick="comprobarLogin()"><br>
                                 </div>
                                 <div class="info">
                                     <h3>Portal de seguimiento de casos</h3>
@@ -71,7 +76,7 @@
                                     
 
                                     <div>
-                                        <img src="logoMinisterio3.png" alt="logo">
+                                        <img src="../src/logoMinisterio3.png" alt="logo">
                                     </div>
                                    
                                    
