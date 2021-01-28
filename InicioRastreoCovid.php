@@ -15,6 +15,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="javascript/comprobaciones.js"></script>
+    <script src="javascript/redirecciones.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@ session_start();
                                     <form>
                                         <input type="text" name="dniUser" placeholder="DNI"><br>
                                         <input type="password" name="pass" placeholder="Contraseña"><br>
-                                        <input type="button" value="Enviar" onclick="comprobarLogin()"><br>
+                                        <input type="button" value="Enviar" onclick="comprobarLogin();redireccionAdministrador()"><br>
                                     </form>
                                 </div>
                                 <div class="info">
@@ -53,8 +54,9 @@ session_start();
 
                                         
                                     </p>
+                                    
                                     <div class="container">
-                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Más info</button>
+                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Más información</button>
                                         <div id="myModal" class="modal fade" role="dialog">
                                             <div class="modal-dialog">
                                                 <!-- Modal content-->
@@ -74,6 +76,9 @@ session_start();
 
                                         </div>
                                     </div>
+                                
+                                
+                                    
                                     
 
                                     <div>

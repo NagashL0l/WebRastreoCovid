@@ -35,6 +35,7 @@ body {
 }
 
 input[type=text], input[type=password] {
+    color: gray;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -81,6 +82,15 @@ h3 {
     padding-left: 0;
 }
 
+.btn-info{
+    background-color:  rgb(59, 148, 86);
+    border: none;
+    color: white;
+    width: 38%;
+    margin: 8px 0;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 <html lang = "es">
@@ -13,6 +17,13 @@
 </head>
 
 <body>
+    <?php
+        if(!isset($_SESSION['dniUser']){
+            header("Location: InicioRastreoCovid.php");
+            exit;
+        }
+    ?>
+
     <div class="topnav">
         <a class="active" href="paginaAdministrador.html">Nuevo caso</a>
         <a href="nuevoEvento.html">Nuevo evento</a>
