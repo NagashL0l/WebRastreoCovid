@@ -29,8 +29,8 @@
     ?>
 
     <div class="topnav">
-        <a class="active" href="paginaAdministrador.html">Nuevo caso</a>
-        <a href="nuevoEvento.html">Nuevo evento</a>
+        <a class="active" href="paginaAdministrador.php">Nuevo caso</a>
+        <a href="nuevoEvento.php">Nuevo evento</a>
         <a href="#listadoGeneral">Listado general</a>
         <a href="#about">About</a>
     </div>
@@ -47,7 +47,7 @@
                                 <input id="rnombre" type="text" name="nombre" placeholder="Nombre">
                                 <input id="rmovil" type="text" name="movil" placeholder="Teléfono">
                                 <input id="remail" type="text" name="email" placeholder="Email">
-                                <input type="button" value="Enviar" onclick="comprobarRegistroCaso();"><br>
+                                <input type="button" value="Enviar" onclick="comprobarRegistroCaso();location.reload()"><br>
                             </form>
                         </div>
                         

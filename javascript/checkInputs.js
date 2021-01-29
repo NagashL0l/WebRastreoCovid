@@ -14,22 +14,22 @@ function checkDNI(dniUser){
 
 function checkNombre(nombreCaso){
     regExUser = /[A-Za-z0-9]{6,15}/;
-    if(user.match(regExUser) && user.length <= 40)
+    if(nombreCaso.match(regExUser) && nombreCaso.length <= 40)
         return true;
     else return false;
 
 }
 
 function checkMovil(movilCaso){
-    regExPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    if(user.match(regExPhone) && user.length <= 12)
+    regExPhone = /[0-9]{9}/;
+    if(movilCaso.match(regExPhone) && movilCaso.length <= 12)
         return true;
     else return false;
 }
 
 function checkEmail(emailCaso){
     regExEmail = /[a-zA-Z0-9\-\_\.]*\@[a-zA-Z0-9\-\_\.]*\.[a-zA-Z0-9\-\_\.]*/;
-    if(email.match(regExEmail))
+    if(emailCaso.match(regExEmail))
         return true;
     else return false;
 }

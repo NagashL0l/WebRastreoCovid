@@ -49,18 +49,18 @@ function comprobarRegistroCaso() {
     
     dniCaso = document.getElementById("rdniCaso");
     
-    if(!checkDNI(dniUser.value)){
-        dniUser.style.border = "2px solid red";
-        dniUser.value = "";
+    if(!checkDNI(dniCaso.value)){
+        dniCaso.style.border = "2px solid red";
+        dniCaso.value = "";
         formCorrecto = false;
         mal += "DNI no válido.\n";
     }
 
-    movilCaso = document.getElementById("rnombre");
+    nombreCaso = document.getElementById("rnombre");
     
-    if(!checkNombre(movilCaso.value)){
-        movilCaso.style.border = "2px solid red";
-        movilCaso.value = "";
+    if(!checkNombre(nombreCaso.value)){
+        nombreCaso.style.border = "2px solid red";
+        nombreCaso.value = "";
         formCorrecto = false;
         mal += "Nombre no válido.\n";
     }
@@ -74,7 +74,6 @@ function comprobarRegistroCaso() {
         mal += "Móvil no válido.\n";
     }
 
-
     emailCaso = document.getElementById("remail");
     
     if(!checkEmail(emailCaso.value)){
@@ -84,6 +83,18 @@ function comprobarRegistroCaso() {
         mal += "Email no válido.\n";
     }
 
+    if(formCorrecto){
+        $.ajax({
+            url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value,
+            type: 'POST',
+            dataType: 'text',
+        })
+        .fail(function(){
+            alert("No se ha podido registrar el caso. Intentalo de nuevo más tarde.");
+        });
+    }else{
+        alert(mal);
+    }
     
 
 
