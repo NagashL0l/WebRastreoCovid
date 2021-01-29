@@ -44,12 +44,13 @@ color: white;
  }
  
 input[type=text] {
-     width: 100%;
-     padding: 12px 20px;
-     margin: 8px 0;
-     box-sizing: border-box;
-     border: none;
-     border-bottom: 2px solid rgb(59, 148, 86);
+    color: gray;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(59, 148, 86);
 }
 
 input[type=submit] {

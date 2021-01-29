@@ -15,7 +15,8 @@
         $pdo->execute($parametros);
 
         while ($row=$pdo->fetch(PDO::FETCH_ASSOC)){
-            $_SESSION['dniUser'] = $row['dniUser'];
+            $_SESSION['dniUser'] = $row['Dni'];
+            $_SESSION['pass'] = $row['Pass'];
         }
     }
 
