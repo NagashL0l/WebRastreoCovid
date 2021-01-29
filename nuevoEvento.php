@@ -10,7 +10,7 @@
     <!--Uso del framework Bootstrap para asegurar un diseño responsive-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/estiloPagAdmin.css">
+    <link rel="stylesheet" href="css/estiloNuevoEvento.css">
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -42,11 +42,12 @@
                 <div class="row no-gutter">
                     <div class="nuevoEvento">
                         <div class="col-lg-12">
-                            <form action="succes.html" method="post">
-                                <input type="text" name="fechaNofificacion" placeholder="Fecha de notificación"><br>
-                                <input type="text" name="fechaEfecto" placeholder="Fecha de efecto">
+                            <form>
+                                <input type="text" name="fechaNofificacion" placeholder="Fecha de notificación (mm-dd-anno)"><br>
+                                <input type="text" name="fechaEfecto" placeholder="Fecha de efecto (mm-dd-anno)">
                                 <textarea name="descripcion" rows="10" cols="100" placeholder="Descripción"></textarea>
-                                <input type="submit" value="Registrar"> 
+                                <input type="button" value="Enviar" onclick="comprobarRegistroEvento();location.reload()"><br>
+                            </form>
                         </div>
                         
                     </div>

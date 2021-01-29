@@ -37,7 +37,7 @@ color: white;
 
 /*Nuevo envento*/
 .nuevoEvento {
-    padding-top: 25%;
+    
     width: 100%;
     
 }
@@ -49,6 +49,7 @@ input[type=text] {
      box-sizing: border-box;
      border: none;
      border-bottom: 2px solid rgb(59, 148, 86);
+     color: gray;
 }
 textarea{
     width: 100%;
@@ -57,9 +58,10 @@ textarea{
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid rgb(59, 148, 86);
+    color: gray;
 }
 
-input[type=submit] {
+input[type=button] {
     background-color:  rgb(59, 148, 86);
     border: none;
     color: white;
@@ -68,7 +70,6 @@ input[type=submit] {
     margin: 8px 0;
     text-decoration: none;
     cursor: pointer;
-
 }
 
 .nuevoEvento{
@@ -105,7 +106,7 @@ input[type=submit] {
   and (-webkit-min-device-pixel-ratio: 1) { 
     /*Nuevo envento*/
     .nuevoEvento {
-        padding-top: 25%;
+       /* padding-top: 25%;*/
         
     }
 }
