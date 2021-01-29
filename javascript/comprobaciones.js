@@ -1,4 +1,4 @@
-function comprobarLogin(){
+function comprobarLogin() {
     formCorrecto = true;
     fallo = "";
 
@@ -42,6 +42,58 @@ function comprobarLogin(){
     }
 }
 
+
+function comprobarRegistroCaso() {
+    formCorrecto = true;
+    fallo = "";
+    
+    dniCaso = document.getElementById("rdniCaso");
+    
+    if(!checkDNI(dniUser.value)){
+        dniUser.style.border = "2px solid red";
+        dniUser.value = "";
+        formCorrecto = false;
+        mal += "DNI no válido.\n";
+    }
+
+    movilCaso = document.getElementById("rnombre");
+    
+    if(!checkNombre(movilCaso.value)){
+        movilCaso.style.border = "2px solid red";
+        movilCaso.value = "";
+        formCorrecto = false;
+        mal += "Nombre no válido.\n";
+    }
+
+    movilCaso = document.getElementById("rmovil");
+    
+    if(!checkMovil(movilCaso.value)){
+        movilCaso.style.border = "2px solid red";
+        movilCaso.value = "";
+        formCorrecto = false;
+        mal += "Móvil no válido.\n";
+    }
+
+
+    emailCaso = document.getElementById("remail");
+    
+    if(!checkEmail(emailCaso.value)){
+        emailCaso.style.border = "2px solid red";
+        emailCaso.value = "";
+        formCorrecto = false;
+        mal += "Email no válido.\n";
+    }
+
+    
+
+
+}
+
+
+
+
 function cerrarSesion(){
     window.open("cerrar_sesion.php", "_self");
 }
+
+

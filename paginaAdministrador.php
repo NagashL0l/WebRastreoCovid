@@ -42,12 +42,13 @@
                 <div class="row no-gutter">
                     <div class="nuevoCaso">
                         <div class="col-lg-12">
-                            <form action="succes.html" method="post">
-                                <input type="text" name="DNI" placeholder="DNI"><br>
-                                <input type="text" name="nombre" placeholder="Nombre">
-                                <input type="text" name="movil" placeholder="Teléfono">
-                                <input type="text" name="email" placeholder="Email">
-                                <input type="submit" value="Registrar"> 
+                            <form>
+                                <input id="rdniCaso" type="text" name="dniCaso" placeholder="DNI"><br>
+                                <input id="rnombre" type="text" name="nombre" placeholder="Nombre">
+                                <input id="rmovil" type="text" name="movil" placeholder="Teléfono">
+                                <input id="remail" type="text" name="email" placeholder="Email">
+                                <input type="button" value="Enviar" onclick="comprobarRegistroCaso();"><br>
+                            </form>
                         </div>
                         
                     </div>
