@@ -49,12 +49,7 @@ session_start();
                                     <p> 
                                         es una herramienta informática desarrollada en colaboración con el equipo de rastreadores del Misnisterio de Sanidad del Gobierno de España, con la finalidad de facilitar la labor de seguimiento de casos COVID-19.
                                     </p>
-                                    <p> 
-                                        Aenean est leo, ornare eget nisi id, ullamcorper laoreet felis. Vivamus quis turpis nisl. Proin congue mauris et lectus dictum maximus. Quisque fermentum urna non libero cursus, tincidunt cursus metus congue. Mauris a leo ut. <br/>
-                                        Quisque fermentum urna.
-
-                                        
-                                    </p>
+                                    
                                     
                                     <div class="container">
                                         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Más información</button>
@@ -67,7 +62,27 @@ session_start();
                                                         <h4 class="modal-title">Modal Header</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>Some text in the modal.</p>
+                                                        <p><p>La COVID-19 afecta de distintas maneras en función de cada persona. La mayoría de las personas que se contagian presentan síntomas de intensidad leve o moderada, y se recuperan sin necesidad de hospitalización.
+                                                                Los síntomas más habituales son los siguientes:</p>
+                                                                - Fiebre<br>
+                                                                - Tos seca<br>
+                                                                - Cansancio<br>
+                                                                <p>Otros síntomas menos comunes son los siguientes:</p>
+                                                                - Molestias y dolores<br>
+                                                                - Dolor de garganta<br>
+                                                                - Diarrea<br>
+                                                                - Conjuntivitis<br>
+                                                                - Dolor de cabeza<br>
+                                                                - Pérdida del sentido del olfato o del gusto<br>
+                                                                - Erupciones cutáneas o pérdida del color en los dedos de las manos o de los pies<br>
+                                                                <p>Los síntomas graves son los siguientes:</p>
+                                                                - Dificultad para respirar o sensación de falta de aire<br>
+                                                                - Dolor o presión en el pecho<br>
+                                                                - Incapacidad para hablar o moverse<br>
+                                                                - Si presentas síntomas graves, busca atención médica inmediata. Sin embargo, siempre debes llamar a tu doctor o centro de atención sanitaria antes de presentarte en el lugar en cuestión.<br>
+
+                                                                <p>Lo recomendable es que las personas que sufran síntomas leves y tengan un buen estado de salud general se confinen en casa.
+                                                                De media, las personas que se contagian empiezan a presentar síntomas en un plazo de 5 a 6 días desde que se infectan, pero pueden tardar hasta 14.</p></p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

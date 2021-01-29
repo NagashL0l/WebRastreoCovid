@@ -8,7 +8,7 @@ function redireccionNuevoEvento() {
     window.location(url);
 }
 
-function redireccionInicio(){
-    var url = "inicioRastreoCovid.php";
+function redireccionIndex(){
+    var url = "indez.php";
     window.location(url);
 }

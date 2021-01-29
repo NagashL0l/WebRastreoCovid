@@ -104,9 +104,5 @@ input[type=button] {
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
-    /*Nuevo envento*/
-    .nuevoEvento {
-       /* padding-top: 25%;*/
-        
-    }
+    
 }

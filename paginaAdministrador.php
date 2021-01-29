@@ -23,7 +23,7 @@
     
     <?php
         if(!isset($_SESSION['dniUser'])){ 
-            header("Location: inicioRastreoCovid.php");
+            header("Location: index.php");
             exit;
         }
     ?>

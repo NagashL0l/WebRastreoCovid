@@ -9,7 +9,7 @@
 }
 
 body {
-    overflow: hidden; /* oculta las scrollbars */
+    /*overflow: hidden; /* oculta las scrollbars */
     font-family: "Arial";
 }
 
@@ -92,6 +92,9 @@ h3 {
     cursor: pointer;
 }
 
+.modal-body{
+    color:gray;
+}
 
 
 /* Conversión de tamaño para asegurar un diseño responsive */
