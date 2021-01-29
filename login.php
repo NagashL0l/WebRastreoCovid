@@ -19,7 +19,7 @@
         }
     }
 
-    header('Location: index.php');
+    header('Location: paginaAdministrador.php');
     exit();
 
 ?>

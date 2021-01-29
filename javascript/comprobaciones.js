@@ -2,17 +2,19 @@ function comprobarLogin(){
     formCorrecto = true;
     fallo = "";
 
-    dniUser = document.getElementById("dniUser");
-    // correo cumple reg. exp.
+    dniUser = document.getElementById("ldniUser");
+    
     if(!checkDNI(dniUser.value)){
+        dniUser.style.border = "2px solid red";
         dniUser.value = "";
         formCorrecto = false;
         mal += "DNI no válido.\n";
     }
 
-    pass = document.getElementById("pass");
-    // contraseña cumple exp. reg.
+    pass = document.getElementById("lpass");
+    
     if(!checkPassword(pass.value)){
+        pass.style.border = "2px solid red";
         pass.value = "";
         formCorrecto = false;
         mal += "Contraseña no válida.\n";

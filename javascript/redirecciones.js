@@ -7,3 +7,8 @@ function redireccionNuevoEvento() {
     var url = "nuevoEvento.php";
     window.location(url);
 }
+
+function redireccionInicio(){
+    var url = "inicioRastreoCovid.php";
+    window.location(url);
+}

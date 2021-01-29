@@ -16,6 +16,7 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="javascript/comprobaciones.js"></script>
     <script src="javascript/redirecciones.js"></script>
+    <script src="javascript/checkInputs.js"></script>
 </head>
 
 <body>
@@ -38,8 +39,8 @@ session_start();
                             <div class="col-lg-6">
                                 <div class="formulario">
                                     <form>
-                                        <input type="text" name="dniUser" placeholder="DNI"><br>
-                                        <input type="password" name="pass" placeholder="Contraseña"><br>
+                                        <input id="ldniUser" type="text" name="dniUser" placeholder="DNI"><br>
+                                        <input id="lpass" type="password" name="pass" placeholder="Contraseña"><br>
                                         <input type="button" value="Enviar" onclick="comprobarLogin();redireccionAdministrador()"><br>
                                     </form>
                                 </div>
@@ -84,10 +85,7 @@ session_start();
                                     <div>
                                         <img src="src/logoMinisterio3.png" alt="logo">
                                     </div>
-                                   
-                                   
-                                   
-                                    
+
                                    
                                 </div>
                             </div>
