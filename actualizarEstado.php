@@ -6,7 +6,7 @@
 
 <html lang = "es">
 <head>
-    <title>Listado General de Casos</title>
+    <title>Actualizar estado</title>
     <!--Uso del framework Bootstrap para asegurar un diseño responsive-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,8 +31,8 @@
     <div class="topnav">
         <a href="paginaAdministrador.php">Nuevo caso</a>
         <a href="nuevoEvento.php">Nuevo evento</a>
-        <a class="active" href="listadoGeneralCasos.php">Listado general</a>
-        <a  href="actualizarEstado.php">Actualizar estado</a>
+        <a href="listadoGeneralCasos.php">Listado general</a>
+        <a class="active" href="actualizarEstado.php">Actualizar estado</a>
     </div>
 
     <div class="container-fluid">
@@ -52,30 +52,27 @@
                             die("Conexión fallida: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT Dni, Nombre, Movil, Email, FechaApertura, FechaCierre FROM CASO";
+                        $sql = "SELECT Descripcion, FechaNotificacion, FechaEfectoEvento, Estado FROM EVENTO ORDER BY Estado;";
                         $result = $conn->query($sql);
                     ?>
     
                     <table class="table table-hover">
+                        <caption>Seleccione el evento que desea actualizar</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Dni</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Móvil</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Fecha de apertura</th>
-                                <th scope="col">Fecha de cierre</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha de notificación</th>
+                                <th scope="col">Fecha de efecto</th>
+                                <th scope="col">Descripción</th>    
                             </tr>
                         </thead>
                         <tbody>
                             <?php while($row = $result->fetch_assoc()) { ?>
                                 <tr>
-                                    <td><?php echo $row ['Dni']; ?></td>
-                                    <td><?php echo $row ['Nombre']; ?></td>
-                                    <td><?php echo $row ['Movil']; ?></td>
-                                    <td><?php echo $row ['Email']; ?></td>
-                                    <td><?php echo $row ['FechaApertura']; ?></td>
-                                    <td><?php echo $row ['FechaCierre']; ?></td>
+                                    <td><a href="index.php"><?php echo $row ['Estado']; ?></a></td>
+                                    <td><?php echo $row ['FechaNotificacion']; ?></td>
+                                    <td><?php echo $row ['FechaEfectoEvento']; ?></td>
+                                    <td><?php echo $row ['Descripcion']; ?></td>
                                 </tr>      
                             <?php } ?>          
 
@@ -85,22 +82,8 @@
                         
                     </table>
                 </div>
-                
             </div>
-        </div> 
-        <div class="col-lg-">
-        </div>
-        <div class="col-lg-12">
-            <div class="filtrado">
-                <h1>Filtrado de casos</h1>
-                    <form>
-                        <input id="bdni" type="text" name="dniCaso" placeholder="DNI"><br>
-                        <input type="button" value="Buscar" onclick="buscarCaso()"><br>
-                    </form>
-            </div>
-        </div>
-        
-        
+        </div>    
     </div>
 
 </body>

@@ -164,11 +164,37 @@ function comprobarRegistroEvento(){
         }
     }
 
-
-
 }
 
+function buscarCaso(){
+    formCorrecto = true;
+    fallo = "";
+    
+    dniCaso = document.getElementById("bdni");
+    
+    if(!checkDNI(dniCaso.value)){
+        dniCaso.style.border = "2px solid red";
+        dniCaso.value = "";
+        formCorrecto = false;
+        mal += "DNI no válido.\n";
+    }
 
+    else {
+        if(formCorrecto){
+            $.ajax({
+                url: './php/cogerCaso.php?dniCaso=' + dniCaso.value,
+                type: 'POST',
+                dataType: 'text',
+            })
+            .fail(function(){
+                alert("No se ha podido completar la búsqueda.");
+            });
+        }else{
+            alert(mal);
+        }
+    }
+
+}
 
 
 function cerrarSesion(){

@@ -7,7 +7,7 @@
         public function registrarCaso($dniCaso, $nombreCaso, $movilCaso , $emailCaso, $fechaAperturaCaso, $fechaCierreCaso){
             $conexion = (new Conexion())->conectar();
             $parametros = array(':dniCaso'=>$dniCaso, ':nombreCaso'=>$nombreCaso, ':movilCaso'=>$movilCaso, ':emailCaso'=>$emailCaso, ':fechaAperturaCaso'=>$fechaAperturaCaso, ':fechaCierreCaso'=>$fechaCierreCaso);
-            $sql = "INSERT INTO `CASO` VALUES (:dniCaso, :nombreCaso, :movilCaso, :emailCaso, :fechaAperturaCaso, :fechaCierreCaso)";
+            $sql = "INSERT INTO `caso` VALUES (:dniCaso, :nombreCaso, :movilCaso, :emailCaso, :fechaAperturaCaso, :fechaCierreCaso)";
             $pdo = $conexion->prepare($sql);
             $pdo->execute($parametros);
 

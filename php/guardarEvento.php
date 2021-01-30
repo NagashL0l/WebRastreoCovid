@@ -7,7 +7,7 @@
         public function registrarEvento($idEvento, $fechaNotificacionEvento, $fechaEfectoEvento, $descripcionEvento){
             $conexion = (new Conexion())->conectar();
             $parametros = array(':idEvento'=>$idEvento, ':fechaNotificacionEvento'=>$fechaNotificacionEvento, ':fechaEfectoEvento'=>$fechaEfectoEvento, ':descripcionEvento'=>$descripcionEvento);
-            $sql = "INSERT INTO `EVENTO` VALUES (:idEvento :fechaNotificacionEvento, :fechaEfectoEvento, :descripcionEvento, 1)";
+            $sql = "INSERT INTO `evento` VALUES (:idEvento :fechaNotificacionEvento, :fechaEfectoEvento, :descripcionEvento, 1)";
             $pdo = $conexion->prepare($sql);
             $pdo->execute($parametros);
 

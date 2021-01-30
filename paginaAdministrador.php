@@ -32,7 +32,7 @@
         <a class="active" href="paginaAdministrador.php">Nuevo caso</a>
         <a href="nuevoEvento.php">Nuevo evento</a>
         <a href="listadoGeneralCasos.php">Listado general</a>
-        <a href="#about">About</a>
+        <a href="actualizarEstado.php">Actualizar estado</a>
     </div>
 
     <div class="container-fluid">
