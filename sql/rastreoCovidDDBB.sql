@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
--- https://www.phpmyadmin.net/
+-- version 4.9.2 sabado noche
+-- https://www.phpmyadmin.net/ 
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-01-2021 a las 13:17:32
+-- Tiempo de generación: 30-01-2021 a las 20:49:50
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -61,6 +61,14 @@ CREATE TABLE `caso` (
   `FechaCierre` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `caso`
+--
+
+INSERT INTO `caso` (`Dni`, `Nombre`, `Movil`, `Email`, `FechaApertura`, `FechaCierre`) VALUES
+('48002548F', 'Guillermo Rojas', '888555444', 'ejjj@hotmail.com', '2021-01-30', '2021-02-04'),
+('86953730E', 'Samuel Encinas Rojo', '656656563', 'jiji@hotmail.com', '2021-01-30', '2021-02-02');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +82,13 @@ CREATE TABLE `evento` (
   `FechaEfectoEvento` date DEFAULT NULL,
   `Estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `evento`
+--
+
+INSERT INTO `evento` (`Id`, `Descripcion`, `FechaNotificacion`, `FechaEfectoEvento`, `Estado`) VALUES
+('hdhshdhsdhdhdhdhdhdhdhdhd', 'Primer evento de prueba.', '2021-01-28', '2021-01-06', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
