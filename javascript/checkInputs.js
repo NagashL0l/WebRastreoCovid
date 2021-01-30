@@ -17,7 +17,6 @@ function checkNombre(nombreCaso){
     if(nombreCaso.match(regExUser) && nombreCaso.length <= 40)
         return true;
     else return false;
-
 }
 
 function checkMovil(movilCaso){
@@ -30,6 +29,13 @@ function checkMovil(movilCaso){
 function checkEmail(emailCaso){
     regExEmail = /[a-zA-Z0-9\-\_\.]*\@[a-zA-Z0-9\-\_\.]*\.[a-zA-Z0-9\-\_\.]*/;
     if(emailCaso.match(regExEmail))
+        return true;
+    else return false;
+}
+
+function checkTexto(descripcionEvento){
+    regExDesc = /[A-Za-z0-9]{1,230}/;
+    if(descripcionEvento.match(regExDesc))
         return true;
     else return false;
 }

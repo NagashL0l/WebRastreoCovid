@@ -41,7 +41,7 @@ session_start();
                                     <form>
                                         <input id="ldniUser" type="text" name="dniUser" placeholder="DNI"><br>
                                         <input id="lpass" type="password" name="pass" placeholder="Contraseña"><br>
-                                        <input type="button" value="Enviar" onclick="comprobarLogin();redireccionAdministrador()"><br>
+                                        <input type="button" value="Entrar" onclick="comprobarLogin();redireccionAdministrador()"><br>
                                     </form>
                                 </div>
                                 <div class="info">
@@ -59,7 +59,7 @@ session_start();
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Modal Header</h4>
+                                                        <h4 class="modal-title">Información general</h4>
                                                     </div>
                                                     <div class="modal-body">
                                                         <p><p>La COVID-19 afecta de distintas maneras en función de cada persona. La mayoría de las personas que se contagian presentan síntomas de intensidad leve o moderada, y se recuperan sin necesidad de hospitalización.

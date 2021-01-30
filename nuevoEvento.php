@@ -17,6 +17,7 @@
     <script src="javascript/comprobaciones.js"></script>
     <script src="javascript/redirecciones.js"></script>
     <script src="javascript/checkInputs.js"></script>
+    <script src="javascript/sha1.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
     <div class="topnav">
         <a href="paginaAdministrador.php">Nuevo caso</a>
         <a class="active" href="nuevoEvento.php">Nuevo evento</a>
-        <a href="#listadoGeneral">Listado general</a>
+        <a href="listadoGeneralCasos.php">Listado general</a>
         <a href="#about">About</a>
     </div>
 
@@ -43,9 +44,9 @@
                     <div class="nuevoEvento">
                         <div class="col-lg-12">
                             <form>
-                                <input type="text" name="fechaNofificacion" placeholder="Fecha de notificación (mm-dd-anno)"><br>
-                                <input type="text" name="fechaEfecto" placeholder="Fecha de efecto (mm-dd-anno)">
-                                <textarea name="descripcion" rows="10" cols="100" placeholder="Descripción"></textarea>
+                                <input id="rfechaNotificacion" type="text" name="fechaNofificacion" placeholder="Fecha de notificación (anno-mm-dd)"><br>
+                                <input id="rfechaEfecto" type="text" name="fechaEfecto" placeholder="Fecha de efecto (anno-mm-dd)">
+                                <textarea id="rdescripcion" name="descripcion" rows="10" cols="100" placeholder="Descripción del evento"></textarea>
                                 <input type="button" value="Enviar" onclick="comprobarRegistroEvento();location.reload()"><br>
                             </form>
                         </div>

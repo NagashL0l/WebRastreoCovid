@@ -4,10 +4,10 @@
 
     class Caso{
 
-        public function registrarCaso($dniCaso, $nombreCaso, $movilCaso , $emailCaso){
+        public function registrarCaso($dniCaso, $nombreCaso, $movilCaso , $emailCaso, $fechaAperturaCaso, $fechaCierreCaso){
             $conexion = (new Conexion())->conectar();
-            $parametros = array(':dniCaso'=>$dniCaso, ':nombreCaso'=>$nombreCaso, ':movilCaso'=>$movilCaso, ':emailCaso'=>$emailCaso);
-            $sql = "INSERT INTO `CASO` VALUES (:dniCaso, :nombreCaso, :movilCaso, :emailCaso, 1)";
+            $parametros = array(':dniCaso'=>$dniCaso, ':nombreCaso'=>$nombreCaso, ':movilCaso'=>$movilCaso, ':emailCaso'=>$emailCaso, ':fechaAperturaCaso'=>$fechaAperturaCaso, ':fechaCierreCaso'=>$fechaCierreCaso);
+            $sql = "INSERT INTO `CASO` VALUES (:dniCaso, :nombreCaso, :movilCaso, :emailCaso, :fechaAperturaCaso, :fechaCierreCaso)";
             $pdo = $conexion->prepare($sql);
             $pdo->execute($parametros);
 
@@ -15,6 +15,6 @@
         }
     }
 
-    ($caso = new Caso())->registrarCaso($_GET['dniCaso'], $_GET['nombreCaso'], $_GET['movilCaso'], $_GET['emailCaso']);
+    ($caso = new Caso())->registrarCaso($_GET['dniCaso'], $_GET['nombreCaso'], $_GET['movilCaso'], $_GET['emailCaso'], $_GET['fechaAperturaCaso'], $_GET['fechaCierreCaso']);
 
 ?>

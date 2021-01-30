@@ -9,7 +9,7 @@
             $conexion = (new Conexion())->conectar();
             $parametros = array(':dniUser'=>$dniUser, ':pass'=>$pass);
 
-            $sql = "SELECT 1 FROM `ADMINISTRADOR` WHERE Dni = :dniUser AND Pass = :pass";
+            $sql = "SELECT 1 FROM `administrador` WHERE Dni = :dniUser AND Pass = :pass";
             
             $pdo = $conexion->prepare($sql);
             $pdo->execute($parametros);

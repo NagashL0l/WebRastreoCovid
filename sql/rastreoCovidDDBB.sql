@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2021 a las 20:08:47
+-- Tiempo de generación: 30-01-2021 a las 13:17:32
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -57,7 +57,8 @@ CREATE TABLE `caso` (
   `Nombre` char(40) NOT NULL,
   `Movil` char(12) NOT NULL,
   `Email` char(40) NOT NULL,
-  `Estado` int(4) NOT NULL
+  `FechaApertura` date NOT NULL,
+  `FechaCierre` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -67,10 +68,11 @@ CREATE TABLE `caso` (
 --
 
 CREATE TABLE `evento` (
-  `Id` int(11) NOT NULL,
+  `Id` varchar(40) NOT NULL,
   `Descripcion` char(230) NOT NULL,
   `FechaNotificacion` date NOT NULL,
-  `FechaEfectoEvento` date DEFAULT NULL
+  `FechaEfectoEvento` date DEFAULT NULL,
+  `Estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 

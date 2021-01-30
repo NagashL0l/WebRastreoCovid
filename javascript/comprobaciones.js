@@ -83,19 +83,87 @@ function comprobarRegistroCaso() {
         mal += "Email no válido.\n";
     }
 
-    if(formCorrecto){
-        $.ajax({
-            url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value,
-            type: 'POST',
-            dataType: 'text',
-        })
-        .fail(function(){
-            alert("No se ha podido registrar el caso. Intentalo de nuevo más tarde.");
-        });
-    }else{
-        alert(mal);
+    fechaAperturaCaso = document.getElementById("rfechaApertura");
+    fechaCierreCaso = document.getElementById("rfechaCierre");
+
+    if(fechaCierreCaso == null){
+        if(formCorrecto){
+            $.ajax({
+                url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value + '&fechaAperturaCaso=' + null,
+                type: 'POST',
+                dataType: 'text',
+            })
+            .fail(function(){
+                alert("No se ha podido registrar el caso. Intentalo de nuevo más tarde.");
+            });
+        }else{
+            alert(mal);
+        }
+
+    } else {
+        if(formCorrecto){
+            $.ajax({
+                url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value + '&fechaAperturaCaso=' + fechaAperturaCaso.value  + '&fechaCierreCaso=' + fechaCierreCaso.value, 
+                type: 'POST',
+                dataType: 'text',
+            })
+            .fail(function(){
+                alert("No se ha podido registrar el caso. Intentalo de nuevo más tarde.");
+            });
+        }else{
+            alert(mal);
+        }
     }
-    
+
+}
+
+function comprobarRegistroEvento(){
+    formCorrecto = true;
+    fallo = "";
+
+    fechaNotificacionEvento = document.getElementById("rfechaNotificacion");
+    fechaEfectoEvento = document.getElementById("rfechaEfecto");
+
+    descripcionEvento = document.getElementById("rdescripcion");
+
+    if(!checkTexto(descripcionEvento.value)){
+        descripcionEvento.style.border = "2px solid red";
+        descripcionEvento.value = "";
+        formCorrecto = false;
+        mal += "Descripción no válida.\n";
+    }
+
+    idEvento = b64_sha1(descripcionEvento); 
+
+    if(fechaEfectoEvento == null){
+        if(formCorrecto){
+            $.ajax({
+                url: './php/guardarEvento.php?idEvento=' + idEvento.value + '&fechaNotificacionEvento=' + fechaNotificacionEvento.value + '&fechaEfectoEvento' + null + '&descripcionEvento=' + descripcionEvento.value,
+                type: 'POST',
+                dataType: 'text',
+            })
+            .fail(function(){
+                alert("No se ha podido registrar el evento. Intentalo de nuevo más tarde.");
+            });
+        }else{
+            alert(mal);
+        }
+
+    } else {
+        if(formCorrecto){
+            $.ajax({
+                url: './php/guardarEvento.php?idEvento=' + idEvento.value + '&fechaNotificacionEvento=' + fechaNotificacionEvento.value + '&fechaEfectoEvento' + fechaEfectoEvento.value + '&descripcionEvento=' + descripcionEvento.value,
+                type: 'POST',
+                dataType: 'text',
+            })
+            .fail(function(){
+                alert("No se ha podido registrar el evento. Intentalo de nuevo más tarde.");
+            });
+        }else{
+            alert(mal);
+        }
+    }
+
 
 
 }
