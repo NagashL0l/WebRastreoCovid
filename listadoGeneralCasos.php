@@ -88,11 +88,10 @@
                 
             </div>
         </div> 
-        <div class="col-lg-">
-        </div>
+        
         <div class="col-lg-12">
             <div class="filtrado">
-                <h1>Filtrado de casos</h1>
+                <h2>Filtrado de casos</h2>
                     <form>
                         <input id="bdni" type="text" name="dniCaso" placeholder="DNI"><br>
                         <input type="button" value="Buscar" onclick="buscarCaso()"><br>

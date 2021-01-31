@@ -182,7 +182,7 @@ function buscarCaso(){
     else {
         if(formCorrecto){
             $.ajax({
-                url: './php/cogerCaso.php?dniCaso=' + dniCaso.value,
+                url: './php/cogerCaso.php?dniCaso=' + dniCaso.value, //Hacer que mostrar caso muestre el caso
                 type: 'POST',
                 dataType: 'text',
             })
@@ -194,6 +194,11 @@ function buscarCaso(){
         }
     }
 
+}
+
+
+function actualizarCaso(){
+    //Hacer
 }
 
 

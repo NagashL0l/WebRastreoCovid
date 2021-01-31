@@ -52,14 +52,15 @@
                             die("Conexión fallida: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT Descripcion, FechaNotificacion, FechaEfectoEvento, Estado FROM EVENTO ORDER BY Estado;";
+                        $sql = "SELECT Id, Descripcion, FechaNotificacion, FechaEfectoEvento, Estado FROM EVENTO ORDER BY Estado;";
                         $result = $conn->query($sql);
                     ?>
     
                     <table class="table table-hover">
-                        <caption>Seleccione el evento que desea actualizar</caption>
+                        <caption>Eventos</caption>
                         <thead>
                             <tr>
+                                <th scope="col">Id</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Fecha de notificación</th>
                                 <th scope="col">Fecha de efecto</th>
@@ -69,7 +70,8 @@
                         <tbody>
                             <?php while($row = $result->fetch_assoc()) { ?>
                                 <tr>
-                                    <td><a href="index.php"><?php echo $row ['Estado']; ?></a></td>
+                                <td><a href="index.php"><?php echo $row ['Id']; ?></a></td>
+                                    <td><?php echo $row ['Estado']; ?></td>
                                     <td><?php echo $row ['FechaNotificacion']; ?></td>
                                     <td><?php echo $row ['FechaEfectoEvento']; ?></td>
                                     <td><?php echo $row ['Descripcion']; ?></td>
@@ -83,7 +85,19 @@
                     </table>
                 </div>
             </div>
-        </div>    
+        </div> 
+
+        <div class="col-lg-12">
+            <div class="actualizar">
+                <h2>Introduzca el evento que desea actualizar su estado</h2>
+                    <form>
+                        <input id="uid" type="text" name="idEvento" placeholder="Id del evento"><br>
+                        <input id="uestado" type="number"  min="1" max="5" name="estadoCaso" placeholder="Nuevo estado"><br>
+                        <input type="button" value="Actualizar" onclick="actualizarCaso()"><br>
+                    </form>
+            </div>
+        </div>
+
     </div>
 
 </body>

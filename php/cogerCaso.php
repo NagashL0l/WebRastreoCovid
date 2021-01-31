@@ -25,6 +25,6 @@
 
     ($caso = new Caso())->entrarCaso($_GET['dniCaso']);
 
-    
-
+    //Mostrar el caso
+ 
 ?>
