@@ -89,7 +89,7 @@ function comprobarRegistroCaso() {
     if(fechaCierreCaso == null){
         if(formCorrecto){
             $.ajax({
-                url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value + '&fechaAperturaCaso=' + null,
+                url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso=' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value + '&fechaAperturaCaso=' + fechaAperturaCaso.value  + '&fechaCierreCaso=NULL',
                 type: 'POST',
                 dataType: 'text',
             })
@@ -103,7 +103,7 @@ function comprobarRegistroCaso() {
     } else {
         if(formCorrecto){
             $.ajax({
-                url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value + '&fechaAperturaCaso=' + fechaAperturaCaso.value  + '&fechaCierreCaso=' + fechaCierreCaso.value, 
+                url: './php/guardarCaso.php?dniCaso=' + dniCaso.value + '&nombreCaso=' + nombreCaso.value + '&movilCaso=' + movilCaso.value + '&emailCaso=' + emailCaso.value + '&fechaAperturaCaso=' + fechaAperturaCaso.value  + '&fechaCierreCaso=' + fechaCierreCaso.value, 
                 type: 'POST',
                 dataType: 'text',
             })
@@ -133,12 +133,10 @@ function comprobarRegistroEvento(){
         mal += "Descripción no válida.\n";
     }
 
-    idEvento = b64_sha1(descripcionEvento); 
-
     if(fechaEfectoEvento == null){
         if(formCorrecto){
             $.ajax({
-                url: './php/guardarEvento.php?idEvento=' + idEvento.value + '&fechaNotificacionEvento=' + fechaNotificacionEvento.value + '&fechaEfectoEvento' + null + '&descripcionEvento=' + descripcionEvento.value,
+                url: './php/guardarEvento.php?fechaNotificacionEvento=' + fechaNotificacionEvento.value + '&descripcionEvento=' + descripcionEvento.value,
                 type: 'POST',
                 dataType: 'text',
             })
@@ -152,7 +150,7 @@ function comprobarRegistroEvento(){
     } else {
         if(formCorrecto){
             $.ajax({
-                url: './php/guardarEvento.php?idEvento=' + idEvento.value + '&fechaNotificacionEvento=' + fechaNotificacionEvento.value + '&fechaEfectoEvento' + fechaEfectoEvento.value + '&descripcionEvento=' + descripcionEvento.value,
+                url: './php/guardarEvento.php?fechaNotificacionEvento=' + fechaNotificacionEvento.value + '&fechaEfectoEvento=' + fechaEfectoEvento.value + '&descripcionEvento=' + descripcionEvento.value,
                 type: 'POST',
                 dataType: 'text',
             })
@@ -166,44 +164,17 @@ function comprobarRegistroEvento(){
 
 }
 
-function buscarCaso(){
-    formCorrecto = true;
-    fallo = "";
-    
-    dniCaso = document.getElementById("bdni");
-    
-    if(!checkDNI(dniCaso.value)){
-        dniCaso.style.border = "2px solid red";
-        dniCaso.value = "";
-        formCorrecto = false;
-        mal += "DNI no válido.\n";
-    }
-
-    else {
-        if(formCorrecto){
-            $.ajax({
-                url: './php/cogerCaso.php?dniCaso=' + dniCaso.value, //Hacer que mostrar caso muestre el caso
-                type: 'POST',
-                dataType: 'text',
-            })
-            .fail(function(){
-                alert("No se ha podido completar la búsqueda.");
-            });
-        }else{
-            alert(mal);
-        }
-    }
-
+function actualizarEstado(idEvento, nuevoEstado){
+    console.log("hola");
+    $.ajax({
+        url: './php/cambiarEstado.php?idEvento=' + idEvento + "&nuevoEstado=" + nuevoEstado,
+        type: 'POST',
+        dataType: 'text',
+    })
+    .done(function(data){
+        location.reload();
+    })
+    .fail(function(){
+        alert("No se ha podido actualizar el estado del evento. Intentalo de nuevo más tarde.");
+    });
 }
-
-
-function actualizarCaso(){
-    //Hacer
-}
-
-
-function cerrarSesion(){
-    window.open("cerrar_sesion.php", "_self");
-}
-
-

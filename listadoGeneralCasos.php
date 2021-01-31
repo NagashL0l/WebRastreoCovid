@@ -40,6 +40,47 @@
             <div class="listado">
                 <div class="col-lg-12">
             
+                    <form>
+                        <?php 
+                            if(!isset($_GET['cierre'])){
+                                echo '<input type="radio" id="all" name="casos" value="all" checked="true">';
+                            }else{
+                                echo '<input type="radio" id="all" name="casos" value="all">';
+                            }
+                        ?>
+                        <label for="all">Todos los casos</label>
+                        <?php 
+                            if(isset($_GET['cierre']) && $_GET['cierre'] == 1){
+                                echo '<input type="radio" id="cierre" name="casos" value="cierre" checked="true">';
+                            }else{
+                                echo '<input type="radio" id="cierre" name="casos" value="cierre">';
+                            }
+                        ?>
+                        <label for="cierre">Con fecha de cierre</label>
+                        <?php 
+                            if(isset($_GET['cierre']) && $_GET['cierre'] == 0){
+                                echo '<input type="radio" id="nocierre" name="casos" value="nocierre" checked="true">';
+                            }else{
+                                echo '<input type="radio" id="nocierre" name="casos" value="nocierre">';
+                            }
+                        ?>
+                        <label for="nocierre">Sin fecha de cierre</label>
+                    </form>
+
+                    <script>
+                        $(document).ready(function(){
+                            $("input[type=radio][name=casos]").change(function(){
+                                if(this.value == "all"){
+                                    window.open("listadoGeneralCasos.php" ,"_self");
+                                }else if(this.value == "cierre"){
+                                    window.open("listadoGeneralCasos.php?cierre=1" ,"_self");
+                                }else if(this.value == "nocierre"){
+                                    window.open("listadoGeneralCasos.php?cierre=0" ,"_self");
+                                }
+                            });
+                        });
+                    </script>
+
                     <?php
                         $servername = "localhost";
                         $username = "root";
@@ -52,7 +93,16 @@
                             die("Conexión fallida: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT Dni, Nombre, Movil, Email, FechaApertura, FechaCierre FROM CASO";
+                        if(!isset($_GET['cierre'])){
+                            $sql = "SELECT Dni, Nombre, Movil, Email, FechaApertura, FechaCierre FROM CASO";
+                        }else if($_GET['cierre'] == 0){
+                            $sql = "SELECT Dni, Nombre, Movil, Email, FechaApertura, FechaCierre FROM CASO WHERE FechaCierre='0000-00-00'";
+                        }else if($_GET['cierre'] == 1){
+                            $sql = "SELECT Dni, Nombre, Movil, Email, FechaApertura, FechaCierre FROM CASO WHERE NOT FechaCierre='0000-00-00'";
+                        }else{
+                            $sql = "SELECT Dni, Nombre, Movil, Email, FechaApertura, FechaCierre FROM CASO";
+                        }
+                        
                         $result = $conn->query($sql);
                     ?>
     
@@ -75,7 +125,13 @@
                                     <td><?php echo $row ['Movil']; ?></td>
                                     <td><?php echo $row ['Email']; ?></td>
                                     <td><?php echo $row ['FechaApertura']; ?></td>
-                                    <td><?php echo $row ['FechaCierre']; ?></td>
+                                    <td><?php 
+                                        if($row ['FechaCierre'] == "0000-00-00"){
+                                            echo "No tiene";
+                                        }else{
+                                            echo $row ['FechaCierre'];
+                                        }
+                                    ?></td>
                                 </tr>      
                             <?php } ?>          
 
@@ -88,18 +144,6 @@
                 
             </div>
         </div> 
-        
-        <div class="col-lg-12">
-            <div class="filtrado">
-                <h2>Filtrado de casos</h2>
-                    <form>
-                        <input id="bdni" type="text" name="dniCaso" placeholder="DNI"><br>
-                        <input type="button" value="Buscar" onclick="buscarCaso()"><br>
-                    </form>
-            </div>
-        </div>
-        
-        
     </div>
 
 </body>

@@ -4,10 +4,10 @@
 
     class Evento{
 
-        public function registrarEvento($idEvento, $fechaNotificacionEvento, $fechaEfectoEvento, $descripcionEvento){
+        public function registrarEvento($fechaNotificacionEvento, $fechaEfectoEvento, $descripcionEvento){
             $conexion = (new Conexion())->conectar();
-            $parametros = array(':idEvento'=>$idEvento, ':fechaNotificacionEvento'=>$fechaNotificacionEvento, ':fechaEfectoEvento'=>$fechaEfectoEvento, ':descripcionEvento'=>$descripcionEvento);
-            $sql = "INSERT INTO `evento` VALUES (:idEvento :fechaNotificacionEvento, :fechaEfectoEvento, :descripcionEvento, 1)";
+            $parametros = array(':fechaNotificacionEvento'=>$fechaNotificacionEvento, ':fechaEfectoEvento'=>$fechaEfectoEvento, ':descripcionEvento'=>$descripcionEvento);
+            $sql = "INSERT INTO `evento` VALUES (NULL, :descripcionEvento, :fechaNotificacionEvento, :fechaEfectoEvento, 1)";
             $pdo = $conexion->prepare($sql);
             $pdo->execute($parametros);
 
@@ -15,6 +15,6 @@
         }
     }
 
-    ($evento = new Evento())->registrarEvento($_GET['idEvento'], $_GET['fechaNotificacionEvento'], $_GET['fechaEfectoEvento'], $_GET['descripcionEvento']);
+    ($evento = new Evento())->registrarEvento($_GET['fechaNotificacionEvento'], $_GET['fechaEfectoEvento'], $_GET['descripcionEvento']);
 
 ?>

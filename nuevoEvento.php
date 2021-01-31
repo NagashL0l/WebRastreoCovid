@@ -17,7 +17,7 @@
     <script src="javascript/comprobaciones.js"></script>
     <script src="javascript/redirecciones.js"></script>
     <script src="javascript/checkInputs.js"></script>
-    <script src="javascript/sha1.js"></script>
+    <script src="javascript/iniciarContadorEventos.js"></script>
 </head>
 
 <body>
@@ -44,8 +44,8 @@
                     <div class="nuevoEvento">
                         <div class="col-lg-12">
                             <form>
-                                <input id="rfechaNotificacion" type="text" name="fechaNofificacion" placeholder="Fecha de notificación (anno-mm-dd)"><br>
-                                <input id="rfechaEfecto" type="text" name="fechaEfecto" placeholder="Fecha de efecto (anno-mm-dd)">
+                                <input id="rfechaNotificacion" type="text" name="fechaNofificacion" placeholder="Fecha de notificación (YYYY-mm-dd)"><br>
+                                <input id="rfechaEfecto" type="text" name="fechaEfecto" placeholder="Fecha de efecto (YYYY-mm-dd)">
                                 <textarea id="rdescripcion" name="descripcion" rows="10" cols="100" placeholder="Descripción del evento"></textarea>
                                 <input type="button" value="Enviar" onclick="comprobarRegistroEvento();location.reload()"><br>
                             </form>
@@ -59,11 +59,9 @@
                 <div class="row no-gutter">
                     <div class="contTotalEventos">
                         <div class="col-lg-12">
-                            <div class="texto">
-                                <b>Eventos registrados</b>
-                                <div class="eventos">
-                                    <b>003</b>
-                                </div>
+                        <div class="texto">
+                                <b>Eventos registrados</b><br/>
+                                <span class="contador-eventos"></span>
                             </div>
                         </div>
                     </div>

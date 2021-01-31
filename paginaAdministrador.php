@@ -17,6 +17,7 @@
     <script src="javascript/comprobaciones.js"></script>
     <script src="javascript/redirecciones.js"></script>
     <script src="javascript/checkInputs.js"></script>
+    <script src="javascript/iniciarContadorCasos.js"></script>
 </head>
 
 <body>
@@ -47,8 +48,8 @@
                                 <input id="rnombre" type="text" name="nombre" placeholder="Nombre">
                                 <input id="rmovil" type="text" name="movil" placeholder="Teléfono">
                                 <input id="remail" type="text" name="email" placeholder="Email">
-                                <input id="rfechaApertura" type="text" name="fechaApertura" placeholder="Fecha de apertura (anno-mm-dd)">
-                                <input id="rfechaCierre" type="text" name="fechaApertura" placeholder="Fecha de apertura (anno-mm-dd)">
+                                <input id="rfechaApertura" type="text" name="fechaApertura" placeholder="Fecha de apertura (YYYY-mm-dd)">
+                                <input id="rfechaCierre" type="text" name="fechaCierre" placeholder="Fecha de cierre (YYYY-mm-dd)">
                                 <input type="button" value="Enviar" onclick="comprobarRegistroCaso();location.reload()"><br>
                             </form>
                         </div>
@@ -62,10 +63,8 @@
                     <div class="contTotalCasos">
                         <div class="col-lg-12">
                             <div class="texto">
-                                <b>Casos registrados</b>
-                                <div class="casos">
-                                    <b>003</b>
-                                </div>
+                                <b>Casos registrados</b><br/>
+                                <span class="contador-casos"></span>
                             </div>
                         </div>
                     </div>

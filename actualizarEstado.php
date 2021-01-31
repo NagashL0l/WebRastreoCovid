@@ -52,7 +52,7 @@
                             die("Conexión fallida: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT Id, Descripcion, FechaNotificacion, FechaEfectoEvento, Estado FROM EVENTO ORDER BY Estado;";
+                        $sql = "SELECT Id, Descripcion, FechaNotificacion, FechaEfectoEvento, Estado FROM EVENTO ORDER BY Id;";
                         $result = $conn->query($sql);
                     ?>
     
@@ -64,17 +64,52 @@
                                 <th scope="col">Estado</th>
                                 <th scope="col">Fecha de notificación</th>
                                 <th scope="col">Fecha de efecto</th>
-                                <th scope="col">Descripción</th>    
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Cambiar estado</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php while($row = $result->fetch_assoc()) { ?>
                                 <tr>
-                                <td><a href="index.php"><?php echo $row ['Id']; ?></a></td>
-                                    <td><?php echo $row ['Estado']; ?></td>
+                                    <td><?php echo $row ['Id']; ?></td>
+                                    <td><?php
+                                        if($row ['Estado'] == '1'){
+                                            echo "Normal";
+                                        }else if($row ['Estado'] == '2'){
+                                            echo "Normal con factor de riesgo";
+                                        }else if($row ['Estado'] == '3'){
+                                            echo "Contacto estrecho con COVID positivo";
+                                        }else if($row ['Estado'] == '4'){
+                                            echo "Caso sospechoso";
+                                        }else if($row ['Estado'] == '5'){
+                                            echo "COVID positivo";
+                                        }else{
+                                            echo "Desconocido";
+                                        }
+                                    ?></td>
                                     <td><?php echo $row ['FechaNotificacion']; ?></td>
                                     <td><?php echo $row ['FechaEfectoEvento']; ?></td>
                                     <td><?php echo $row ['Descripcion']; ?></td>
+                                    <td><?php
+                                        $idEvento = $row['Id'];
+                                        if($row ['Estado'] == '1'){
+                                            echo "<button onclick='actualizarEstado($idEvento, 3)'>Contacto estrecho con COVID positivo</button>";
+                                            echo "<button onclick='actualizarEstado($idEvento, 4)'>Caso sospechoso</button>";
+                                            echo "<button onclick='actualizarEstado($idEvento, 5)'>COVID positivo</button>";
+                                        }else if($row ['Estado'] == '2'){
+                                            echo "<button onclick='actualizarEstado($idEvento, 1)'>Normal</button>";
+                                        }else if($row ['Estado'] == '3'){
+                                            echo "<button onclick='actualizarEstado($idEvento, 1)'>Normal</button>";
+                                            echo "<button onclick='actualizarEstado($idEvento, 5)'>COVID positivo</button>";
+                                        }else if($row ['Estado'] == '4'){
+                                            echo "<button onclick='actualizarEstado($idEvento, 1)'>Normal</button>";
+                                            echo "<button onclick='actualizarEstado($idEvento, 5)'>COVID positivo</button>";
+                                        }else if($row ['Estado'] == '5'){
+                                            echo "<button onclick='actualizarEstado($idEvento, 1)'>Normal</button>";
+                                        }else{
+                                            echo "No disponible";
+                                        }
+                                    ?></td>
                                 </tr>      
                             <?php } ?>          
 
@@ -86,17 +121,6 @@
                 </div>
             </div>
         </div> 
-
-        <div class="col-lg-12">
-            <div class="actualizar">
-                <h2>Introduzca el evento que desea actualizar su estado</h2>
-                    <form>
-                        <input id="uid" type="text" name="idEvento" placeholder="Id del evento"><br>
-                        <input id="uestado" type="number"  min="1" max="5" name="estadoCaso" placeholder="Nuevo estado"><br>
-                        <input type="button" value="Actualizar" onclick="actualizarCaso()"><br>
-                    </form>
-            </div>
-        </div>
 
     </div>
 
