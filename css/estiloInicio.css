@@ -58,13 +58,14 @@ input[type=button] {
 
 h3 {
     color: rgb(59, 148, 86);
-    font-size: 33px;
+    font-size: 20px;
     
 }
 
 
 .info {
-    padding-top: 50px;
+    padding-top: 20px;
+    text-align: justify;
     
 }
 

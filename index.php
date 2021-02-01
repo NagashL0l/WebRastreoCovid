@@ -47,7 +47,7 @@ session_start();
                                 <div class="info">
                                     <h3>Portal de seguimiento de casos</h3>
                                     <p> 
-                                        es una herramienta informática desarrollada en colaboración con el equipo de rastreadores del Misnisterio de Sanidad del Gobierno de España, con la finalidad de facilitar la labor de seguimiento de casos COVID-19.
+                                        es una herramienta informática desarrollada en colaboración con el equipo de rastreadores del Misnisterio de Sanidad del Gobierno de España.
                                     </p>
                                     
                                     
