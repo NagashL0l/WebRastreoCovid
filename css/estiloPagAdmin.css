@@ -16,7 +16,7 @@ color: #f2f2f2;
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
-font-size: 30px;
+font-size: 20px;
 }
 
 .topnav a:hover {
@@ -74,20 +74,18 @@ input[type=button] {
     color: rgb(21, 32, 43);
     height: 100vh;
     width: 100vh;
-    
- 
-    
+
 }
 
 .texto{
     margin-top: 22.5vh;
-    font-size: 80px;
+    font-size: 60px;
     text-align:center;
     
 }
 
 .casos{
-    font-size: 120px;
+    font-size: 100px;
     text-align:center;
 }
 

@@ -9,17 +9,17 @@ body {
   }
   
 .topnav a {
-float: left;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 30px;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .topnav a:hover {
-background-color: #ddd;
-color: black;
+    background-color: #ddd;
+    color: black;
 }
 
 .topnav a.active {
@@ -42,29 +42,10 @@ color: black;
 }
 
 .table{
-    margin: 8px 8px;
+        margin: 8px 8px;
 }
 
-input[type=text], [type=number]{
-    color: gray;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid rgb(59, 148, 86);
-}
 
-input[type=button] {
-    background-color:  rgb(59, 148, 86);
-    border: none;
-    color: white;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    text-decoration: none;
-    cursor: pointer;
-}
 
  
     

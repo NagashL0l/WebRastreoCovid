@@ -13,7 +13,7 @@ function checkDNI(dniUser){
 }
 
 function checkNombre(nombreCaso){
-    regExUser = /[A-Za-z0-9]{6,15}/;
+    regExUser = /[A-Za-z 0-9]{6,40}/;
     if(nombreCaso.match(regExUser) && nombreCaso.length <= 40)
         return true;
     else return false;

@@ -22,7 +22,7 @@ color: #f2f2f2;
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
-font-size: 30px;
+font-size: 20px;
 }
 
 .topnav a:hover {
@@ -35,11 +35,8 @@ background-color: rgb(59, 148, 86);
 color: white;
 }
 
-/*Nuevo envento*/
-.nuevoEvento {
-    
+.nuevoEvento {    
     width: 100%;
-    
 }
  
 input[type=text] {
@@ -91,12 +88,12 @@ input[type=button] {
 
 .texto{
     margin-top: 22.5vh;
-    font-size: 80px;
+    font-size: 60px;
     text-align:center;
 }
 
 .eventos{
-    font-size: 120px;
+    font-size: 100px;
     text-align:center;
 }
 
