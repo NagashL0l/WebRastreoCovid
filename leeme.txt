@@ -1,0 +1,41 @@
+### Práctica final Tecnologías Web - Juan Blanco Martín
+
+## Despliegue sobre un servidor local
+En mi caso, he realizado la práctica sobre un servidor local, por lo que explicaré como instalar la aplicación en uno.
+
+1. El primer paso es tener descargado un servidor local. En mi caso he usado **XAMPP**.
+2. Hay que introducir todos los ficheros fuente en la carpeta que maneja el servidor. En caso de XAMPP, la carpeta es *htdocs*, encontrada en el directorio de instalación del propio XAMPP. Es recomendable agrupar todos los archivos bajo una misma carpeta.
+3. Lo siguiente será abrir XAMPP y arrancar los módulos *Apache* y *MySQL*, para poder hacer uso del servidor y del administrador de bases de datos.
+4. Por último, hay que importar el fichero de la carpeta *sql*, que contiene la estructura de la base de datos y algunos datos que introduciremos en esta memoria.
+
+La aplicación ya está instalada y se puede abrir en la dirección localhost/WebRastreoCovid/index.php.
+
+## Disposición de ficheros
+La estructura de la aplicación es la siguiente:
+
+- En la carpeta principal se encuentran los archivos .php principales.
+    - index.php es la página principal.
+    - paginaAdministrador.php permite registrar un nuevo caso y acceder al resto de opciones de la web.
+    - nuevoEvento.php permite registrar un nuevo evento y acceder al resto de opciones de la web.
+    - login.php gestiona el inicio de sesión.
+    - listadoGeneralCasos.php muestra y filtra los casos y permite acceder al resto de opciones de la web.
+    - actualizarEstado.php muestra los eventos y permite actualizar su estado, además de acceder al resto de opciones.
+- *php* es la carpeta en la que se encuentran los scripts relacionados con la interacción con la base de datos.
+- *javascript* contiene los diferentes ficheros javascript con los scripts usados.
+- *css* contiene los ficheros css usados para definir el diseño del portal web.
+- *sql* contiene un único fichero sql con la base de datos que hay que importar.
+- *src* comprende diferentes recursos usados en la web.
+
+## Observaciones técnicas
+- Para asegurar un diseño responsive y facilitar la correcta colocación de los elementos he usado el framework Bootstrap, con la siguiente documentación getbootstrap.com/docs.
+- El acceso a todas las páginas a excepción de index.php requieren un inicio de sesión. Esto es posible por el uso de sesiones. 
+  Los DNIs y contraseñas con las que se puede acceder son:
+    (12422961V contrasena),
+    (25408819Y contrasena),
+    (12530226X contrasena),
+    (96787579Z contrasena),
+    (72273735F contrasena),
+    (09002826M contrasena),
+    (48222890D contrasena).
+- El funcionamiento está garantizado con el navegador Google Chrome, así que se recomienda su uso para evaluarla.
+- La web ha sido probada en pantallas con una resolución 1920x1080 píxeles, de tamaños 24 y 14 pulgadas.
